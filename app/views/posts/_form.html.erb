@@ -18,8 +18,12 @@
 
   <div class="mb-3">
     <%= form.label :content, class: 'form-label' %>
-      <%= form.text_area :content, class: 'form-control' %>
-    </div>
+    <%= form.text_area :content, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.file_field :photos, as: :file, multiple: true %>
+  </div>
 
   <div class="mb-3">
     <% if post.persisted? %>

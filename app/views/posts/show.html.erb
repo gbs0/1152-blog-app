@@ -1,3 +1,5 @@
+
+
 <div class="page-header">
   <h1>Show post</h1>
 </div>
@@ -8,6 +10,13 @@
   <dt>Content:</dt>
   <dd><%= @post.content %></dd>
 </dl>
+
+<% if @post.photos.attached?  %>
+  <% @post.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+<% end %>
+
 
 <%= link_to posts_path, class: 'btn btn-default' do %>
   All Posts
